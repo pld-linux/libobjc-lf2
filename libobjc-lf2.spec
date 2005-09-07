@@ -1,16 +1,16 @@
 %define		libf_objc_makeflags	-s
-%define		trunkdate	200506021805
+%define		trunkdate		200508291710
 
 Summary:	GNUstep Objective C runtime
 Summary(pl):	Biblioteka uruchomieniowa Objective C dla GNUstepa
 Name:		libobjc-lf2
-Version:	r114       
+Version:	r124       
 Release:	1
 Vendor:		http://www.gnustep.org/
 License:	GPL
 Group:		Libraries
 Source0:	http://download.opengroupware.org/sources/trunk/%{name}-trunk-%{version}-%{trunkdate}.tar.gz
-# Source0-md5:	7caa65538fe434d23f8445d3e0ff88d5
+# Source0-md5:	b470016fe3c7011a33dd9778af130118
 URL:		http://www.opengroupware.org/
 #AutoReqProv:	off
 BuildRequires:	autoconf

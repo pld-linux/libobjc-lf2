@@ -46,12 +46,16 @@ Pakiet programistyczny GNUstep Objective C.
 
 %build
 . %{_libdir}/GNUstep-libFoundation/System/Library/Makefiles/GNUstep.sh
+LIBRARY_COMBO=gnu-fd-nil
+export LIBRARY_COMBO
 %{__make} %{libf_objc_makeflags} all
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 . %{_libdir}/GNUstep-libFoundation/System/Library/Makefiles/GNUstep.sh
+LIBRARY_COMBO=gnu-fd-nil
+export LIBRARY_COMBO
 %{__make} %{libf_objc_makeflags} install \
 	GNUSTEP_INSTALLATION_DIR=$RPM_BUILD_ROOT%{_libdir}/GNUstep-libFoundation/System
 

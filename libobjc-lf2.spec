@@ -19,6 +19,7 @@ BuildRequires:	bison
 BuildRequires:	flex
 BuildRequires:	gcc-objc
 BuildRequires:	gnustep-make-libFoundation-devel >= 1.10.0
+#Requires:	glibc >= 6:2.3.5-7.6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -62,6 +63,9 @@ export LIBRARY_COMBO
 install -d $RPM_BUILD_ROOT%{_libdir}
 mv $RPM_BUILD_ROOT%{_libdir}/GNUstep-libFoundation/System/Library/Libraries/ix86/linux-gnu/gnu-fd-nil/libobjc*.so.lf2* $RPM_BUILD_ROOT%{_libdir}
 
+#install -d $RPM_BUILD_ROOT/etc/ld.so.conf.d
+#echo '%{_libdir}' > $RPM_BUILD_ROOT/etc/ld.so.conf.d/%{name}.conf
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -86,14 +90,12 @@ if [ "$1" = "0" ]; then
 	if [ -h %{_libdir}/GNUstep/System/Library/Libraries/ix86/linux-gnu/gnu-fd-nil/libobjc.so.lf2 ]; then
 		rm -f %{_libdir}/GNUstep/System/Library/Libraries/ix86/linux-gnu/gnu-fd-nil/libobjc.so.lf2
 	fi
-	if [ -e %{_sysconfdir}/ld.so.conf.d/libobjc-lf2.conf ]; then
-		rm -f %{_sysconfdir}/ld.so.conf.d/libobjc-lf2.conf
-	fi
 fi
 /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
+#%verify(not md5 mtime size) /etc/ld.so.conf.d/*.conf
 %attr(755,root,root) %{_libdir}/libobjc*.so.lf2*
 
 %files devel

@@ -95,7 +95,7 @@ fi
 
 %files
 %defattr(644,root,root,755)
-#%verify(not md5 mtime size) /etc/ld.so.conf.d/*.conf
+#/etc/ld.so.conf.d/*.conf
 %attr(755,root,root) %{_libdir}/libobjc*.so.lf2*
 
 %files devel

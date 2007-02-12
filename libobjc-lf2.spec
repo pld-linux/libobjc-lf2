@@ -2,7 +2,7 @@
 %define		trunkdate		200508291710
 
 Summary:	GNUstep Objective C runtime
-Summary(pl):	Biblioteka uruchomieniowa Objective C dla GNUstepa
+Summary(pl.UTF-8):   Biblioteka uruchomieniowa Objective C dla GNUstepa
 Name:		libobjc-lf2
 Version:	r124       
 Release:	2
@@ -25,12 +25,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 GNUstep Objective C runtime.
 
-%description -l pl
+%description -l pl.UTF-8
 Biblioteka uruchomieniowa Objective C dla GNUstepa.
 
 %package devel
 Summary:	The header files for the ObjC library
-Summary(pl):	Pliki nag≥Ûwkowe biblioteki ObjC
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe biblioteki ObjC
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires: 	gnustep-make-libFoundation-devel
@@ -39,7 +39,7 @@ Requires: 	gnustep-make-libFoundation-devel
 %description devel
 GNUstep Objective C development package.
 
-%description devel -l pl
+%description devel -l pl.UTF-8
 Pakiet programistyczny GNUstep Objective C.
 
 %prep
